@@ -1,15 +1,22 @@
 import "./styles.css";
 import { Apple, EllipsisVertical } from "lucide-react";
 
-export function Product() {
+export function Product({ productName, quantity, type }) {
   return (
-    <div>
-      <div>
-        <p>Maçã</p>
-        <span>2 uni</span>
+    <div className="card-product">
+      <div className="details">
+        <p>{productName}</p>
+        <span>{quantity}</span>
       </div>
-      <Apple size={16} />
-      <EllipsisVertical size={20} />
+
+      <div className="category">
+        <p className="tag">
+          <Apple size={16} />
+          {type}
+        </p>
+
+        <EllipsisVertical size={20} color="#a881e6" />
+      </div>
     </div>
   );
 }
